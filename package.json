@@ -1,7 +1,7 @@
 {
-  "name": "react-express-typescript-starter",
-  "version": "1.0.0",
-  "description": "starter project for react,express,typescript,jest,webpack,mysql",
+  "name": "note-taking",
+  "version": "0.0.1",
+  "description": "An Note Taking Apps using react,express,typescript,jest,webpack,mongo",
   "scripts": {
     "clean": "rimraf dist",
     "clean-server": "rimraf dist/index.js ",
@@ -29,7 +29,7 @@
     "jest",
     "webpack",
     "hrm",
-    "mysql"
+    "mongo"
   ],
   "repository": {
     "type": "git",
@@ -81,14 +81,13 @@
     "body-parser": "^1.18.2",
     "bunyan": "^1.8.12",
     "bunyan-rotating-file-stream": "^1.6.3",
+    "connect-mongo": "^2.0.1",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "express": "^4.13.4",
-    "express-mysql-session": "^1.2.2",
     "express-session": "^1.15.6",
     "helmet": "^3.8.2",
     "morgan": "^1.8.2",
-    "mysql2": "^1.4.2",
     "on-headers": "^1.0.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
