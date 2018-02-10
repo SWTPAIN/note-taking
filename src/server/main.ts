@@ -9,15 +9,15 @@ import './config/axios-interceptor'
 import { appLogs, loggerMiddleware } from './config/logger'
 import expressStaticGzip from './middlewares/compression'
 import session from './middlewares/session'
-import api from './routes/api'
+import apiRouter from './routes/api'
 import { pageRouter } from './routes/index'
 
-interface ErrorConstructor {
+interface IErrorConstructor {
   new(message?: string, status?: number): any
   (message?: string): string
   (status?: number): number
 }
-declare const ErrorWrapper: ErrorConstructor
+declare const ErrorWrapper: IErrorConstructor
 
 const removeEtag = (res) => {
   onHeaders(res, function(){
@@ -52,7 +52,7 @@ app.use((req, res, next) => {
   removeEtag(res)
   next()
 })
-app.use(api)
+app.use('/v1/api/', apiRouter)
 app.use('/', pageRouter)
 app.use(notFoundHandler)
 app.use(gobalErrorHandler)

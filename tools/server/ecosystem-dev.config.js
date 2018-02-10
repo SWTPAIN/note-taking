@@ -1,6 +1,6 @@
-const envDefaults = require('./env');
+const envDefaults = require('./env')
 
-const env = Object.assign(envDefaults, {});
+const env = Object.assign(envDefaults, {})
 module.exports = {
   apps: [
     {
@@ -10,7 +10,7 @@ module.exports = {
       ignore_watch: ['node_modules', 'src', 'static', 'tools', 'types'],
       cwd: './dist',
       args: 'config=./../environment/config.json',
-      env,
-    },
-  ],
-};
+      env
+    }
+  ]
+}

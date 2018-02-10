@@ -8,9 +8,9 @@ const args: any  = process.argv.slice(2).reduce((result, arg) => {
   return result
 }, {})
 
-// tslint:disable-next-line
-console.log('aaa: ', args)
-const configFilePath = path.join(__dirname, args.config)
+const configFilePath = process.env.NODE_ENV === 'test' ?
+  path.join(__dirname, '../../../environment/config.test.json') :
+  path.join(__dirname, args.config)
 
 const config = JSON.parse(fs.readFileSync(configFilePath).toString())
 export const getConfigurationValue = (key) => _.get(config, key)

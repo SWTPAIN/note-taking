@@ -1,13 +1,13 @@
-const envDefaults = require('./env');
+const envDefaults = require('./env')
 
-const env = Object.assign(envDefaults, {});
+const env = Object.assign(envDefaults, {})
 module.exports = {
   apps: [
     {
       name: 'app',
       script: 'dist/index.js',
       cwd: './dist',
-      env,
-    },
-  ],
-};
+      env
+    }
+  ]
+}

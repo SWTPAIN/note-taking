@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios'
 import { getConfigurationValue } from './'
 import { appLogs } from './logger'
 
-interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+interface ICustomAxiosRequestConfig extends AxiosRequestConfig {
   responseTime?: number,
   startTime?: number
 }
@@ -24,7 +24,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response) => {
     const { data, status, statusText, headers } = response
-    const config: CustomAxiosRequestConfig = response.config
+    const config: ICustomAxiosRequestConfig = response.config
     config.responseTime = Date.now() - config.startTime
     delete config.startTime
     const res = { data, status, statusText, headers, config }
