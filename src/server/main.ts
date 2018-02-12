@@ -20,7 +20,7 @@ interface IErrorConstructor {
 declare const ErrorWrapper: IErrorConstructor
 
 const removeEtag = (res) => {
-  onHeaders(res, function(){
+  onHeaders(res, function() {
     this.removeHeader('ETag')
   })
 }

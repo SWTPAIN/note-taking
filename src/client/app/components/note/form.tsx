@@ -1,14 +1,14 @@
 import * as React from 'react'
-import { Note } from '../../../types/note'
+import { INote } from '../../../types/note'
 import { Button, Input } from '../common/form'
 
-interface Props {
-  note: Note
+interface IProps {
+  note: INote
   onChange?: (fieldName: string, value: string) => void
   onSave?: () => void
 }
 
-const NoteForm: React.StatelessComponent<Props> = (props) =>
+const NoteForm: React.StatelessComponent<IProps> = (props) =>
   (
     <form>
       <Input
